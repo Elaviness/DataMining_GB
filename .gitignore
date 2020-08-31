@@ -1,0 +1,6 @@
+gbm/__pycache__/*
+scrapy.cfg
+.idea/*
+.vscode/*
+gbm/spiders/__pycache__/*
+
