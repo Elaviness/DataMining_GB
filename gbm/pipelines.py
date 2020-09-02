@@ -14,8 +14,8 @@ from pymongo import MongoClient
 
 class GbmPipeline:
     def __init__(self):
-        client = MongoClient()
-        self.db = client('gb_parse_youla')
+        client = MongoClient('mongodb://localhost:27017')
+        self.db = client['gb_parse_08']
 
     def process_item(self, item, spider):
         collection = self.db[type(item).__name__]
@@ -32,5 +32,6 @@ class GbmImagePipeline(ImagesPipeline):
 
 
     def item_completed(self, results, item, info):
-        item['images'] = [itm[1] for itm in results if itm[0]]
+        if item.get('images'):
+            item['images'] = [itm[1] for itm in results if itm[0]]
         return item

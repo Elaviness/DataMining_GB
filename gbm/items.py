@@ -39,3 +39,10 @@ class AutoyoulaItem(scrapy.Item):
     price = scrapy.Field(input_processor=MapCompose(get_price))
     # seller_url = scrapy.Field() 
 
+class InstaPostsItem(scrapy.Item):
+    _id = scrapy.Field()
+    json_data = scrapy.Field()
+
+class InstaAuthorItem(scrapy.Item):
+    _id = scrapy.Field()
+    json_data = scrapy.Field()
