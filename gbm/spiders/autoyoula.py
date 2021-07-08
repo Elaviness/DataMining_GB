@@ -1,7 +1,7 @@
 import scrapy
 
 from scrapy.loader import ItemLoader
-from gbm.items import AutoyoulaItem
+# from gbm.items import AutoyoulaItem
 
 class AutoyoulaSpider(scrapy.Spider):
     name = 'autoyoula'
@@ -46,13 +46,14 @@ class AutoyoulaSpider(scrapy.Spider):
             )
     
     def ads_parse(self, response):
-        item_loader = ItemLoader(AutoyoulaItem(), response)
+        # item_loader = ItemLoader(AutoyoulaItem(), response)
 
-        item_loader.add_value('url', response.url)
-        for key, value in self.__xpaths.items():
-            if key in {'pagination', 'ads'}:
-                continue
-            item_loader.add_xpath(key, value)
+        # item_loader.add_value('url', response.url)
+        # for key, value in self.__xpaths.items():
+        #     if key in {'pagination', 'ads'}:
+        #         continue
+        #     item_loader.add_xpath(key, value)
 
-        yield item_loader.load_item()
+        # yield item_loader.load_item()
+        pass
         

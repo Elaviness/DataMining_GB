@@ -1,0 +1,8 @@
+gbm/__pycache__/*
+gbm/__pycache__/settings.cpython-38.pyc
+scrapy.cfg
+.idea/*
+.vscode/*
+gbm/spiders/__pycache__/*
+.env
+
