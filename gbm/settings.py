@@ -64,9 +64,12 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'gbm.pipelines.GbmPipeline': 300,
-#}
+IMAGES_STORE = 'images'
+
+ITEM_PIPELINES = {
+  'gbm.pipelines.GbmImagePipeline': 100,
+   'gbm.pipelines.GbmPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
